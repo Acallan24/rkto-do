@@ -1,0 +1,13 @@
+{% extends "base/main.html" %}
+{% block content %}
+    <a href="{% url 'tasklist' %}">Back</a>
+    <center><h2>{{ tasksdetail.title }}</h2></center>
+    <center>
+    {% if tasksdetail.completed %}
+        <h2>Status: Completed</h2>
+    {% else %}
+        <h2>Status: Incomplete</h2>
+    {% endif %} 
+    </center>
+    <h2>{{ tasksdetail.description }}</h2>
+{% endblock %}

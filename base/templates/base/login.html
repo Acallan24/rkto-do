@@ -1,0 +1,22 @@
+{% extends "base/main.html" %}
+{% load static %}
+{% block out %}
+<center>
+    <img src="{% static 'images/RKTO-DO.png' %}" style="height: 500px; width: 500px;" alt="loginsvg">
+</center>
+{% endblock %}
+{% block content %}
+<div class="header-bar">
+    <h1>Login</h1>
+</div>
+<div class="card-body">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <input style="width: 94.5%;" class="button" type="submit" value="Login">
+    </form>
+    <p>Dont have an account? <a href="{% url 'register'%}">Register</a></p>
+    <P>Forot your password? <a href="{% url 'password_reset' %}">Forgot Password</a></P>
+</div>
+{% endblock %}
